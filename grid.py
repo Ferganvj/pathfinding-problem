@@ -63,16 +63,16 @@ class Graph:
 
     def draw(self, surface):
 
-        # Draw nodes
+        # Drawing nodes
         for node in self.nodes:
             node.draw(surface)
 
-        # Draw agents
+        # Drawing agents
         if self.agents:
             for ag in self.agents:
                 ag.draw(surface)
 
-        # Draw Target
+        # Drawing Target
         if self.target:
             pg.draw.circle(surface, pg.Color('black'), self.target, 20)
             pg.draw.circle(surface, pg.Color('blue'), self.target, 15)
