@@ -15,7 +15,6 @@ def draw_header(surface):
 
     pg.draw.line(surface, pg.Color("white"), (0, h_size), (SIZE[0], h_size), 3)
 
-
 def draw_instructions(surface):
     surf = pg.Surface((250, 250)).convert_alpha()
     surf.fill(BACKGROUND)
@@ -26,7 +25,7 @@ def draw_instructions(surface):
     font.set_bold(True)
 
     for idx, line in enumerate(INSTRUCTIONS.split('\n')[1:]):
-        tsurface = font.render(line, True, pg.Color('red'))
+        tsurface = font.render(line, True, pg.Color('white'))
         text_rect = tsurface.get_rect()
 
         fs = font.size(line)[1]
@@ -37,16 +36,17 @@ def draw_instructions(surface):
     pg.draw.rect(surface, pg.Color('black'), rect, 5)
 
 
-def draw_settings(surface):
+'''def draw_settings(surface):
     surf = pg.Surface((250, 250)).convert_alpha()
     surf.fill((255, 100, 255))
     rect = surf.get_rect(center=(400, 300))
 
     surface.blit(surf, rect)
-    pg.draw.rect(surface, pg.Color('red'), rect, 5)
+    pg.draw.rect(surface, pg.Color('red'), rect, 5)'''
+
 
 class Button:
-    def __init__(self, text, size, pos, bg_color=pg.Color('red'), font_color=pg.Color('white'), font_size=16,
+    def __init__(self, text, size, pos, bg_color=pg.Color('black'), font_color=pg.Color('white'), font_size=16,
                  anchor='topleft'):
         self.text = text
         self.size = size
